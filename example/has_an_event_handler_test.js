@@ -1,4 +1,4 @@
-run_test(function test_event_bindings_and_fireings() {
+Testies.run_test(function test_event_bindings_and_fireings() {
   function Lion() {
     Beehive.make(this).have_an('event handler');
   }
@@ -16,7 +16,7 @@ run_test(function test_event_bindings_and_fireings() {
   this.assert_true(is_legging_it);
 });
 
-run_test(function test_event_unbinding() {
+Testies.run_test(function test_event_unbinding() {
   function Lion() {
     Beehive.make(this).have_an('event handler');
   }

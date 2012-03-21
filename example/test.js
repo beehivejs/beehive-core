@@ -33,7 +33,7 @@ Testies.TestFrame = function TestFrame() {
   }
 }
 
-function run_test(example) {
+Testies.run_test = function run_test(example) {
   var test_frame = new Testies.TestFrame();
   example.apply(test_frame);
 }

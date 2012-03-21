@@ -1,5 +1,5 @@
 
-run_test(function stuff_should_behave_like_stuff() {
+Testies.run_test(function stuff_should_behave_like_stuff() {
   Beehive.Behaviours.Animal = function Animal() {
     this.can_breathe = true;
   };
