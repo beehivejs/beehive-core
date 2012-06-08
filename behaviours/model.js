@@ -25,7 +25,7 @@ Beehive.Behaviours.Model = function Model(params) {
     self['set_'+attr_name] = function(value) {
       if (attributes[attr_name] != value) {
         attributes[attr_name] = value;
-        self.fire(attr_name + '.changed');
+        self.fire(attr_name + '.changed', self, value);
       }
     }
   }

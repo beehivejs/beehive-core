@@ -1,4 +1,6 @@
 Testies.run_test(function it_should_have_evented_attributes() {
+  var test = this;
+
   function SuperModel(params) {
     var self = this;
     Beehive.make(self).behave_like_a('model', {
@@ -19,12 +21,16 @@ Testies.run_test(function it_should_have_evented_attributes() {
     rubbish_value: 'foooooooo'
   });
 
+
   this.assert_equal(leslie.hair_state(), 'good');
   this.assert_equal(leslie.mood(), 'fine');
 
-  leslie.set_hair_state('bad');
+  leslie.bind('mood.changed', function(super_model, mood_value) {
+    test.assert_equal(super_model, leslie);
+    test.assert_equal(mood_value, 'pissed');
+  });
 
-  this.assert_equal(leslie.mood(), 'pissed');
+  leslie.set_hair_state('bad');
 });
 
 Testies.run_test(function it_should_have_evented_relationships() {
