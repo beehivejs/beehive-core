@@ -43,7 +43,7 @@ var Beehive = new function() {
 
     // Non-destructive functions
     array.set = function set(_array) {
-      array.empty();
+      array.length = 0;
       for (var i=0; i<_array.length; i++) {
         array.push(_array[i]);
       }
