@@ -12,6 +12,7 @@ var Beehive = new function() {
     return {
       behave_like_a: behave_like_a,
       behave_like_an: behave_like_a,
+      have: behave_like_a,
       have_a: behave_like_a,
       have_an: behave_like_a
     };
@@ -24,6 +25,12 @@ var Beehive = new function() {
         words[i] = words[i].substr(0, 1).toUpperCase() + words[i].substr(1);
       }
       return words.join('');
+    },
+
+    camel_to_underscore: function camel_to_underscore(string) {
+      return string.replace(/([A-Z])/g, function(character) {
+        return '_' + character.toLowerCase();
+      }).replace(/^_/, '');
     },
 
     arrayify_arguments: function arrayify_arguments(args) {
